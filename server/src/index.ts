@@ -24,12 +24,18 @@ await redisClient.configSet('notify-keyspace-events', 'Ex');
 // SEAT HOLD EXPIRATION
 const LOCK_DURATION_MS = 600000; // 10 minutes
 
+// app.post('/api/seats/lock', async (req, res) => {})
 
-app.get("/api/users", (_req, res) => {
-  res.json({ ok: true });
-});
+// app.post('/api/seats/unlock', async (req, res) => {})
+
+// app.post('/api/seats/checkout', async (req, res) => {})
+
+/* Redis Expiration Listener */
+// subscriberClient.subscribe();
+
 
 const port = Number(process.env.PORT ?? 4000);
+
 app.listen(port, () => {
   console.log(`API listening on http://localhost:${port}`);
 });
