@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:alpine
+    container_name: ticketing-redis
+    ports:
+      - "6373:6379"
+    # Automatically keeps the container alive if it hits errors
+    restart: always 
