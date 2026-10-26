@@ -55,6 +55,13 @@ export default function SeatMap() {
     }
   }
 
+  const resetDemo = () => {
+    setSelectedSeat(null);
+    setUiStatus('idle');
+    setExpiresAt(null);
+    setErrorMessage("");
+  }
+
   return(
     <div style={{ padding: '24px'}}>
       <div style={{ display: 'flex', gap: '8px', margin: '20px 0' }}>
@@ -98,6 +105,9 @@ export default function SeatMap() {
       {uiStatus === 'success' && (
         <div style={{ color: 'green', fontWeight: 'bold', marginTop: '12px' }}>
           🎉 Order Confirmed! See you at the show!
+          <button onClick={resetDemo} style={{ display: 'block', margin: '1rem auto', padding: '8px 16px'}}>
+            Reset Demo
+          </button>
         </div>
       )}
   </div>
